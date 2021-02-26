@@ -3,13 +3,18 @@
 :root {
   --primary-white: #ffff;
   --primary-orange: #f9ab00;
-  --primary-dark: rgba(255,255,255,0);
+  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-red: #ef4035;
+  --primary-hover-red: #f33501;
 }
 
 body {
   font-family: "Roboto Condesed" sans-serif;
 }
 /************************** Navbar ****************************/
+nav {
+  z-index: 2;
+}
 .logo {
   width: 150px;
 }
@@ -20,6 +25,10 @@ nav a.nav-link {
 }
 nav ul li {
   text-transform: uppercase;
+}
+.navbar {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 .navbar-nav > li > a {
   margin-right: 12px;
@@ -33,7 +42,86 @@ nav ul li {
   height: 4rem !important;
   margin-top: 14px;
 }
+
+@media (max-width: 768px) {
+  .navbar-brand {
+    width: 7rem;
+  }
+}
+
 .navbar-nav > li > a.active,
 .navbar-nav > li > a:focus {
   border-top: 0.188rem solid var(--primary-orange);
+}
+
+/************************** HEADER ****************************/
+.header-wraper {
+  position: relative;
+  background: url(background.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh !important;
+}
+.main-info {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto Condesed" sans-serif;
+  z-index: 1;
+}
+.main-info h1 {
+  color: var(--primary-orange);
+  text-transform: uppercase;
+}
+
+/************ Typed Text *************/
+.typed-text {
+  font-size: 2rem;
+  color: var(--primary-white);
+}
+
+@media (max-width: 768px) {
+  .main-info h1 {
+    font-size: 1.5rem !important;
+  }
+  .typed-text {
+    font-size: 1.3rem !important;
+  }
+}
+
+/************ HEADER MAIN OFFER BUTTON *************/
+.btn-main-offer {
+  border: 1px solid var(--primary-red);
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 10px 12px 12px 12px;
+  color: var(--primary-white);
+  margin: 2rem;
+}
+.btn-main-offer:hover {
+  text-decoration: none;
+  background-color: var(--primary-hover-red);
+  color: var(--primary-white);
+  transition: 0.2s ease-in-out;
+}
+
+/************ PARTICLES JS *************/
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100hv;
+  width: 100vw;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .particles-canvas {
+    display: none;
+  }
 }
